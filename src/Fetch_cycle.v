@@ -1,7 +1,3 @@
-`include "Program_counter.v"
-`include "MUX.v"
-`include "imemory.v"
-`include "Adder.v" 
 module fetch_cycle(clk, reset, PCsrcE, PCTargetE, InstrD, PCD, PCPlus4D);
 
     //inputs and outputs

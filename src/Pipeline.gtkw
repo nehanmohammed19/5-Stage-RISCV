@@ -1,0 +1,91 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Fri Oct 17 05:21:18 2025
+[*]
+[dumpfile] "/mnt/c/Users/nehan/OneDrive/Desktop/Nehan_RISCV/src/dump.vcd"
+[dumpfile_mtime] "Fri Oct 17 05:05:54 2025"
+[dumpfile_size] 16483
+[savefile] "/mnt/c/Users/nehan/OneDrive/Desktop/Nehan_RISCV/src/Pipeline.gtkw"
+[timestart] 0
+[size] 2548 1483
+[pos] -912 -713
+*-7.000000 600 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Pipeline_tb.
+[treeopen] Pipeline_tb.dut.
+[sst_width] 214
+[signals_width] 267
+[sst_expanded] 1
+[sst_vpaned_height] 462
+@800200
+-Global Input
+@28
+Pipeline_tb.clk
+Pipeline_tb.reset
+@1000200
+-Global Input
+@800200
+-Fetch Cylce
+@28
+Pipeline_tb.dut.PCsrcE
+@22
+Pipeline_tb.dut.PCTargetE[31:0]
+Pipeline_tb.dut.PCD[31:0]
+Pipeline_tb.dut.InstrD[31:0]
+Pipeline_tb.dut.PCPlus4D[31:0]
+@1000200
+-Fetch Cylce
+@800200
+-Decode Cycle
+@22
+Pipeline_tb.dut.PCE[31:0]
+Pipeline_tb.dut.PCPlus4E[31:0]
+Pipeline_tb.dut.RD_E[4:0]
+@28
+Pipeline_tb.dut.ALUControlE[2:0]
+Pipeline_tb.dut.ALUSrcE
+Pipeline_tb.dut.BranchE
+Pipeline_tb.dut.MemWriteE
+Pipeline_tb.dut.RegWriteE
+Pipeline_tb.dut.ResultSrcE
+@22
+Pipeline_tb.dut.RD1_E[31:0]
+Pipeline_tb.dut.RD2_E[31:0]
+Pipeline_tb.dut.Imm_ExtE[31:0]
+@1000200
+-Decode Cycle
+@800200
+-Execute Cycle
+@22
+Pipeline_tb.dut.PCPlus4M[31:0]
+Pipeline_tb.dut.RD_M[4:0]
+@28
+Pipeline_tb.dut.MemWriteM
+Pipeline_tb.dut.RegWriteM
+Pipeline_tb.dut.ResultSrcM
+@22
+Pipeline_tb.dut.ALU_ResultM[31:0]
+Pipeline_tb.dut.WriteDataM[31:0]
+@1000200
+-Execute Cycle
+@800200
+-Memory Cycle
+@22
+Pipeline_tb.dut.PCPlus4W[31:0]
+@28
+Pipeline_tb.dut.ResultSrcW
+@22
+Pipeline_tb.dut.ALU_ResultW[31:0]
+Pipeline_tb.dut.ReadDataW[31:0]
+@1000200
+-Memory Cycle
+@800200
+-Register WriteBack
+@28
+Pipeline_tb.dut.RegWriteW
+@22
+Pipeline_tb.dut.RDW[4:0]
+Pipeline_tb.dut.ResultW[31:0]
+@1000200
+-Register WriteBack
+[pattern_trace] 1
+[pattern_trace] 0

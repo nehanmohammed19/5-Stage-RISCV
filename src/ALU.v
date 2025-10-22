@@ -13,15 +13,15 @@ module ALU(A, B, Result, ALUControl, Overflow, Carry, Zero, Negative);
     wire Cout; // carry out bit from addition/subtraction
     wire[31:0] Sum; // temp result for addition /subtraction
 
-    assign Sum = (ALUControl[0] == 1'b0) ? A + B : (A + (~B) + 1) // if LSB is 0 then ADD, else subtract in 2's compliment
+    assign Sum = (ALUControl[0] == 1'b0) ? A + B : (A + (~B) + 1); // if LSB is 0 then ADD, else subtract in 2's compliment
     
     assign {Cout, Result} = (ALUControl == 3'b000) ? Sum : // ADD Sum already 
                             (ALUControl == 3'b001) ? Sum : 
                             (ALUControl == 3'b010) ? A & B : 
                             (ALUControl == 3'b011) ? A | B :
-                            (ALUControl == 3'b101) ? {{32{1'b0}},(sum[31])} : {33{1'b0}}; // 000..01 for A < B and 000..00 for A >=B
+                            (ALUControl == 3'b101) ? {{32{1'b0}}, (Sum[31])} : {33{1'b0}}; // 000..01 for A < B and 000..00 for A >=B
     // overFlow is true (1) only if 3 conditions are True (1)
-    assign Overflow = ((sum[31] ^ A[31]) & // is the sign of result differnt than A? sum XOR A (if different will be 1)
+    assign Overflow = ((Sum[31] ^ A[31]) & // is the sign of result differnt than A? sum XOR A (if different will be 1)
                       ( ~(ALUControl[0] ^ B[31] ^A[31])) & 
                       // if add (ALUcontrol[0] = 0), are B and A same sign? ~(0 ^ 1 ^ 1) = 1 or ~(0 ^ 0 ^ 0) = 1
                       // if sub (ALUControl[0] = 1) are B and A different signs? ~(1 ^ 1 ^ 0) =  1 or ~(1 ^ 0 ^ 1) = 1

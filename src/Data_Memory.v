@@ -14,7 +14,7 @@ module Data_Memory(clk, reset, A, WD, WE, RD);
             mem[A[31:2]] <= WD;
     end
     // when rst == 0 force RD = 0 otherwise output the addressed word
-    assign RD = (~resst) ? 32'd0 : mem[A[31:2]];
+    assign RD = (~reset) ? 32'd0 : mem[A[31:2]];
 
     initial begin
         mem[0] = 32'h00000000; 

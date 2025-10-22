@@ -5,7 +5,7 @@ module Register_File(clk,rst,WE3,WD3,A1,A2,A3,RD1,RD2);
     input [31:0] WD3; 
     output [31:0] RD1, RD2; 
 
-    reg [31:0] Register [31:0] // 32X32 register array
+    reg [31:0] Register [31:0]; // 32X32 register array
 
 
     // on +ve clock edge
@@ -15,7 +15,7 @@ module Register_File(clk,rst,WE3,WD3,A1,A2,A3,RD1,RD2);
     // Write WD3 to register[A3]
     begin
         if (WE3 & (A3 != 5'h00))
-            Register[A3] <= Wd3; 
+            Register[A3] <= WD3; 
     end
 
 

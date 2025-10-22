@@ -20,7 +20,7 @@ module ALU_Decoder(ALUOp, funct3, funct7, op, ALUControl);
     output [2:0] ALUControl; // Final ALU control signal to select exact operation
 
     assign ALUControl = 
-        // Load/Store → Always perform ADD
+        // Load/Store: Always perform ADD
         (ALUOp == 2'b00) ? 3'b000 :
 
         // Branch/Perform SUB
