@@ -132,7 +132,7 @@ module Pipeline_Top(clk, reset);
     Hazard_Unit forwarding_block(
         .reset(reset),
         .RegWriteM(RegWriteM),
-        .RegWriteW(RegWriteM),
+        .RegWriteW(RegWriteW),
         .RD_M(RD_M),
         .RDW(RDW),
         .Rs1_E(Rs1_E),
